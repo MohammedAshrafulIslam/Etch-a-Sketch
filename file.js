@@ -1,12 +1,29 @@
 const container = document.querySelector(".container");
+const buttons = document.querySelector(".buttons");
+const gridBtn = document.createElement("button");
+gridBtn.classList.add("btn-grid");
+gridBtn.textContent = "Enter the size";
+buttons.appendChild(gridBtn);
+let gridSize = 16;
+gridBtn.addEventListener('click', newGrid );
 
-for(let i = 0; i < 256; i++){
- const box = document.createElement("div");
- box.classList.add("grid-squares");
- container.appendChild(box);
+function newGrid(){
+  newGridSize = Number(window.prompt("Type a number", ""));
+  gridSize = newGridSize;
+  createGrid();
 }
 
-let boxes = container.querySelectorAll(".grid-squares");
+//gridSize = Number(window.prompt("Type a number", ""));
+function createGrid(){
+    container.innerHTML = ""; //clears the container before creating new grid, removes the grid from previous runs if any.
+    for(let i = 0; i < (gridSize*gridSize); i++){
+    const box = document.createElement("div");
+    box.classList.add("grid-squares");
+    container.appendChild(box);
+    }
+  }
+createGrid();  
+let boxes = container.querySelectorAll(".grid-squares"); //selected all the grids using it parent element which is container.
 boxes.forEach(el); 
 
 
@@ -30,7 +47,7 @@ function el(e){
  const btn = document.createElement("button");
  btn.classList.add("btn");
  btn.textContent = "RESET";
- container.appendChild(btn);
+ buttons.appendChild(btn);
 
  btn.addEventListener('click', () => {
   location.reload();   // reloads the webpage when the reset button is clicked.
