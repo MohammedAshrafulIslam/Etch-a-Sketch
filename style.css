@@ -17,7 +17,7 @@ body{
  flex-wrap: wrap;
  height: 640px;
  width: 640px;
- flex-direction: column;
+ 
  /*border: 3px solid black;*/
 }
 
