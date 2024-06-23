@@ -9,6 +9,7 @@ body{
  gap: 20px;
  justify-content: center;
  align-items: center;
+ background-color: oldlace;
 }
 .container{
  display: flex;
