@@ -17,6 +17,7 @@ function createGrid(){
       newGrids = Number(window.prompt("Please set the sixe of the grid(maximum 100)", ""));
     }
     else{
+      container.style.setProperty('--grid-size', grids); //not sure!
       for(let i = 0; i < (grids*grids); i++){
       const box = document.createElement("div");
       box.classList.add("grid-squares");

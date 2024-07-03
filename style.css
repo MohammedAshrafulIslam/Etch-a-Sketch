@@ -27,3 +27,28 @@ body{
  height: 40px;
  width: 40px;
 }
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+ .container {
+   height: 480px;
+   width: 480px;
+ }
+
+ .grid-squares {
+   height: calc(480px / var(--grid-size));
+   width: calc(480px / var(--grid-size));
+ }
+}
+
+@media (max-width: 480px) {
+ .container {
+   height: 320px;
+   width: 320px;
+ }
+
+ .grid-squares {
+   height: calc(320px / var(--grid-size));
+   width: calc(320px / var(--grid-size));
+ }
+}
